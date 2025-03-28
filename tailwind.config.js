@@ -12,12 +12,15 @@ export default withMT({
 					dark: "#125467",
 				},
 				orangeCustom: {
-					light: "#fbc876",
+					light: "#fde0ab",
 					base: "#f79226",
 					dark: "#c0550e",
 				},
 				lightBackground: "#e6eef9",
 				darkText: "#010204",
+			},
+			backgroundImage: {
+				homepageCustom: "url('/src/assets/images/bg-homepage.jpg')",
 			},
 		},
 	},

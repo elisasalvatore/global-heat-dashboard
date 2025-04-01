@@ -5,6 +5,7 @@ import { DataContextProvider } from "./store/DataContext";
 import { DashboardSidebar } from "./components/DashboardSidebar";
 import { MobileSidebar } from "./components/MobileSidebar";
 //pages
+import { CarbonEmissions } from "./pages/CarbonEmissions";
 import { Homepage } from "./pages/Homepage";
 import { Temperature } from "./pages/Temperature";
 
@@ -18,6 +19,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Homepage />} />
 						<Route path="/temperature" element={<Temperature />} />
+						<Route path="/carbon-dioxide" element={<CarbonEmissions />} />
 					</Routes>
 				</div>
 			</div>

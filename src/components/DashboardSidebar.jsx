@@ -44,12 +44,14 @@ export function DashboardSidebar() {
 					</ListItem>
 				</Link>
 
-				<ListItem className="lg:w-[200px] 2xl:w-full hover:text-blueCustom-base focus:text-blueCustom-base">
-					<ListItemPrefix>
-						<FaCloud className="h-4 w-4 lg:w-5 lg:h-5" />
-					</ListItemPrefix>
-					Carbon Dioxide
-				</ListItem>
+				<Link to="/carbon-dioxide">
+					<ListItem className="lg:w-[200px] 2xl:w-full hover:text-blueCustom-base focus:text-blueCustom-base">
+						<ListItemPrefix>
+							<FaCloud className="h-4 w-4 lg:w-5 lg:h-5" />
+						</ListItemPrefix>
+						Carbon Dioxide
+					</ListItem>
+				</Link>
 
 				<ListItem className="lg:w-[200px] 2xl:w-full hover:text-blueCustom-base focus:text-blueCustom-base">
 					<ListItemPrefix>

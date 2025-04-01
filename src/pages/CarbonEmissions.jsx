@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from "react";
 //api
-import { fetchTemperatureData } from "../api/temperatureApi";
+import { fetchCarbonData } from "../api/carbonApi";
 //store
 import APIContext from "../store/DataContext";
 //components
 import { DataLineChart } from "../components/DataLineChart";
 import { MobileHomeBtn } from "../components/MobileHomeBtn";
 
-export const Temperature = () => {
+export const CarbonEmissions = () => {
 	// Retrieve chart-related state and setters from APIContext
 	const {
 		chartData,
@@ -23,14 +23,13 @@ export const Temperature = () => {
 	// Fetch temperature data when the component mounts
 	useEffect(() => {
 		// Function to fetch temperature data and update the chart state
-		const getTemperatureData = async () => {
-			const data = await fetchTemperatureData(); // Fetch temperature data
-			// console.log("🚀 ~ getTemperatureData ~ data:", data);
+		const getCarbonData = async () => {
+			const data = await fetchCarbonData(); // Fetch carbon data
 
 			// Update chart labels and axis titles
-			setChartLabel("Average Temperature");
+			setChartLabel("Average Co2 Emissions");
 			setTitleTextX("Year");
-			setTitleTextY("Degrees °C");
+			setTitleTextY("Part per million (ppm)");
 
 			if (data) {
 				// Update chart data with the fetched temperature values
@@ -39,7 +38,7 @@ export const Temperature = () => {
 					datasets: [
 						{
 							label: chartLabel,
-							data: data.temps,
+							data: data.trends,
 							borderColor: "#f79226",
 							backgroundColor: "rgba(247, 146, 38, 0.2)",
 							borderWidth: 2,
@@ -48,13 +47,11 @@ export const Temperature = () => {
 					],
 				});
 			} else {
-				console.log(
-					"🚀 ~ getTemperatureData ~ error fetching temperature data"
-				);
+				console.log("🚀 ~ getCarbonData ~ error fetching carbon data");
 			}
 		};
 
-		getTemperatureData();
+		getCarbonData();
 	}, [setChartData, setChartLabel, chartLabel, setTitleTextX, setTitleTextY]);
 
 	return (

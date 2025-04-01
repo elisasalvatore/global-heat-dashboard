@@ -71,12 +71,14 @@ export function DashboardSidebar() {
 					</ListItem>
 				</Link>
 
-				<ListItem className="lg:w-[200px] 2xl:w-full hover:text-blueCustom-base focus:text-blueCustom-base">
-					<ListItemPrefix>
-						<FaDiceD6 className="h-4 w-4 lg:w-5 lg:h-5" />
-					</ListItemPrefix>
-					Polar Ice
-				</ListItem>
+				<Link to="/polar-ice">
+					<ListItem className="lg:w-[200px] 2xl:w-full hover:text-blueCustom-base focus:text-blueCustom-base">
+						<ListItemPrefix>
+							<FaDiceD6 className="h-4 w-4 lg:w-5 lg:h-5" />
+						</ListItemPrefix>
+						Polar Ice
+					</ListItem>
+				</Link>
 			</List>
 		</Card>
 	);

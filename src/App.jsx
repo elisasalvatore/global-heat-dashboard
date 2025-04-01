@@ -9,6 +9,7 @@ import { CarbonEmissions } from "./pages/CarbonEmissions";
 import { Homepage } from "./pages/Homepage";
 import { MethaneEmissions } from "./pages/MethaneEmissions";
 import { NitrousEmissions } from "./pages/NitrousEmissions";
+import { PolarIce } from "./pages/PolarIce";
 import { Temperature } from "./pages/Temperature";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 						<Route path="/carbon-dioxide" element={<CarbonEmissions />} />
 						<Route path="/methane" element={<MethaneEmissions />} />
 						<Route path="/nitrous-oxide" element={<NitrousEmissions />} />
+						<Route path="/polar-ice" element={<PolarIce />} />
 					</Routes>
 				</div>
 			</div>

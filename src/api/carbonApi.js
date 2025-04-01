@@ -13,9 +13,9 @@ export const fetchCarbonData = async () => {
 		// Iterate through the fetched data
 		data.forEach((item) => {
 			const year = item.year;
-			// Process data only for every year
-			if (year) {
-				// Initialize the years entry if it does not exist
+			// Process data only for years from 2015 onward
+			if (year >= 2015) {
+				// Initialize the year entry if it does not exist
 				if (!yearsData[year]) {
 					yearsData[year] = { sum: 0, count: 0 };
 				}

@@ -28,9 +28,9 @@ export const Temperature = () => {
 			// console.log("🚀 ~ getTemperatureData ~ data:", data);
 
 			// Update chart labels and axis titles
-			setChartLabel("Average Temperature");
+			setChartLabel("Average Global Temperature");
 			setTitleTextX("Year");
-			setTitleTextY("Degrees °C");
+			setTitleTextY("Degrees (°C)");
 
 			if (data) {
 				// Update chart data with the fetched temperature values

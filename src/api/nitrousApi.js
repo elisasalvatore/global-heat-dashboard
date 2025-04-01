@@ -13,10 +13,9 @@ export const fetchNitrousData = async () => {
 		// Iterate through the fetched data
 		data.forEach((item) => {
 			const year = Math.round(item.date); // Round the year value
-			// Process data only for years from 2005 onward
-			const fiveYearsPeriod = Math.floor(year / 5) * 5; // Group years into 5-year intervals
-			if (fiveYearsPeriod >= 2005) {
-				// Initialize the years entry if it does not exist
+			// Process data only for years from 2015 onward
+			if (year >= 2015) {
+				// Initialize the year entry if it does not exist
 				if (!yearsData[year]) {
 					yearsData[year] = { sum: 0, count: 0 };
 				}

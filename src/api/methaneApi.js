@@ -13,16 +13,15 @@ export const fetchMethaneData = async () => {
 		// Iterate through the fetched data
 		data.forEach((item) => {
 			const year = Math.round(item.date); // Round the year value
-			// Process data only for years from 1990 onward
-			const fiveYearsPeriod = Math.floor(year / 5) * 5; // Group years into 5-year intervals
-			if (fiveYearsPeriod >= 1990) {
-				// Initialize the years entry if it does not exist
-				if (!yearsData[fiveYearsPeriod]) {
-					yearsData[fiveYearsPeriod] = { sum: 0, count: 0 };
+			// Process data only for years from 2015 onward
+			if (year >= 2015) {
+				// Initialize the year entry if it does not exist
+				if (!yearsData[year]) {
+					yearsData[year] = { sum: 0, count: 0 };
 				}
 				// Sum up the methane emissions and count the occurrences
-				yearsData[fiveYearsPeriod].sum += parseFloat(item.trend);
-				yearsData[fiveYearsPeriod].count += 1;
+				yearsData[year].sum += parseFloat(item.trend);
+				yearsData[year].count += 1;
 			}
 		});
 

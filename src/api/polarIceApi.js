@@ -16,18 +16,15 @@ export const fetchPolarIceData = async () => {
 		// Iterate through the fetched data
 		Object.keys(data).forEach((key) => {
 			const year = parseInt(key.substring(0, 4)); // Round the year value
-
-			const fiveYearsPeriod = Math.floor(year / 5) * 5; // Group years into 5-year intervals
-
-			// Process data only for years from 1990 onward
-			if (fiveYearsPeriod >= 1990) {
-				// Initialize the fiveYearsPeriod entry if it does not exist
-				if (!yearsData[fiveYearsPeriod]) {
-					yearsData[fiveYearsPeriod] = { sum: 0, count: 0 };
+			// Process data only for years from 2015 onward
+			if (year >= 2015) {
+				// Initialize the year entry if it does not exist
+				if (!yearsData[year]) {
+					yearsData[year] = { sum: 0, count: 0 };
 				}
 				// Sum up the polar ice values and count the occurrences
-				yearsData[fiveYearsPeriod].sum += parseFloat(data[key].value);
-				yearsData[fiveYearsPeriod].count += 1;
+				yearsData[year].sum += parseFloat(data[key].value);
+				yearsData[year].count += 1;
 			}
 		});
 

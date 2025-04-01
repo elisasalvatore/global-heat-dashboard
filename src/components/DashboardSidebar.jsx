@@ -62,12 +62,14 @@ export function DashboardSidebar() {
 					</ListItem>
 				</Link>
 
-				<ListItem className="lg:w-[200px] 2xl:w-full hover:text-blueCustom-base focus:text-blueCustom-base">
-					<ListItemPrefix>
-						<FaBottleDroplet className="h-4 w-4 lg:w-5 lg:h-5" />
-					</ListItemPrefix>
-					Nitrous Oxide
-				</ListItem>
+				<Link to="/nitrous-oxide">
+					<ListItem className="lg:w-[200px] 2xl:w-full hover:text-blueCustom-base focus:text-blueCustom-base">
+						<ListItemPrefix>
+							<FaBottleDroplet className="h-4 w-4 lg:w-5 lg:h-5" />
+						</ListItemPrefix>
+						Nitrous Oxide
+					</ListItem>
+				</Link>
 
 				<ListItem className="lg:w-[200px] 2xl:w-full hover:text-blueCustom-base focus:text-blueCustom-base">
 					<ListItemPrefix>

@@ -8,6 +8,7 @@ import { MobileSidebar } from "./components/MobileSidebar";
 import { CarbonEmissions } from "./pages/CarbonEmissions";
 import { Homepage } from "./pages/Homepage";
 import { MethaneEmissions } from "./pages/MethaneEmissions";
+import { NitrousEmissions } from "./pages/NitrousEmissions";
 import { Temperature } from "./pages/Temperature";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 						<Route path="/temperature" element={<Temperature />} />
 						<Route path="/carbon-dioxide" element={<CarbonEmissions />} />
 						<Route path="/methane" element={<MethaneEmissions />} />
+						<Route path="/nitrous-oxide" element={<NitrousEmissions />} />
 					</Routes>
 				</div>
 			</div>

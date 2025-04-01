@@ -44,10 +44,12 @@ export const MobileSidebar = () => {
 			</Link>
 
 			{/* Nitrous Oxide N2O*/}
-			<div className="w-[80px] h-[80px] flex flex-col items-center justify-center text-blue-gray-700 text-sm rounded-md leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80 hover:text-blueCustom-base focus:text-blueCustom-base cursor-pointer">
-				<FaBottleDroplet className="w-6 h-6" />
-				N2O
-			</div>
+			<Link to="/nitrous-oxide">
+				<div className="w-[80px] h-[80px] flex flex-col items-center justify-center text-blue-gray-700 text-sm rounded-md leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80 hover:text-blueCustom-base focus:text-blueCustom-base cursor-pointer">
+					<FaBottleDroplet className="w-6 h-6" />
+					N2O
+				</div>
+			</Link>
 
 			{/* Polar Ice */}
 			<div className="w-[80px] h-[80px] flex flex-col items-center justify-center text-blue-gray-700 text-sm rounded-md leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80 hover:text-blueCustom-base focus:text-blueCustom-base cursor-pointer">

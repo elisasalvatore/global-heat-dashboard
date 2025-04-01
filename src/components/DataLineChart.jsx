@@ -24,18 +24,25 @@ ChartJS.register(
 export const DataLineChart = ({ data, titleTextX, titleTextY }) => {
 	return (
 		<div className="flex items-center justify-center m-auto w-[100%] 2xl:w-[80%] h-[90%] p-2 md:p-8 ">
-			<div className="flex items-center justify-center m-auto w-full h-[400px] md:h-full">
+			<div className="flex items-center justify-center m-auto w-full h-[400px] md:h-[90%] lg:h-full">
 				<Line
 					data={data}
 					options={{
 						responsive: true,
 						maintainAspectRatio: false,
 						plugins: {
-							legend: { position: "bottom" },
-							// labels: { font: { size: 50 } },
+							legend: {
+								position: "bottom",
+								labels: {
+									font: {
+										size: 16, // Change label text size
+									},
+									color: "#333", // Change label color
+								},
+							},
 							title: {
 								display: false,
-								// text: "Cambiamenti della Temperatura nel Tempo",
+								// text: "Temperature Changes Over Time",
 							},
 						},
 						scales: {
@@ -43,18 +50,17 @@ export const DataLineChart = ({ data, titleTextX, titleTextY }) => {
 								title: {
 									display: true,
 									text: titleTextX,
-									font: { weight: "bold" },
+									font: { weight: "bold", size: 16 },
 								},
-								// ticks: { font: { size: 14 } },
+								ticks: { font: { size: 15 } },
 							},
 							y: {
 								title: {
 									display: true,
 									text: titleTextY,
-									font: { weight: "bold" },
-									// font: { size: 16 },
+									font: { weight: "bold", size: 16 },
 								},
-								// ticks: { font: { size: 14 } },
+								ticks: { font: { size: 15 } },
 							},
 						},
 					}}

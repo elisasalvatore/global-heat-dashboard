@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from "react";
 //api
-import { fetchCarbonData } from "../api/carbonApi";
+import { fetchMethaneData } from "../api/methaneApi";
 //store
 import APIContext from "../store/DataContext";
 //components
 import { DataLineChart } from "../components/DataLineChart";
 import { MobileHomeBtn } from "../components/MobileHomeBtn";
 
-export const CarbonEmissions = () => {
+export const MethaneEmissions = () => {
 	// Retrieve chart-related state and setters from APIContext
 	const {
 		chartData,
@@ -20,19 +20,19 @@ export const CarbonEmissions = () => {
 		setTitleTextY,
 	} = useContext(APIContext);
 
-	// Fetch carbon dioxide emissions data when the component mounts
+	// Fetch methane data when the component mounts
 	useEffect(() => {
-		// Function to fetch carbon dioxide data and update the chart state
-		const getCarbonData = async () => {
-			const data = await fetchCarbonData(); // Fetch carbon dioxide data
+		// Function to fetch methane data and update the chart state
+		const getMethaneData = async () => {
+			const data = await fetchMethaneData(); // Fetch methane data
 
 			// Update chart labels and axis titles
-			setChartLabel("Average Co2 Emissions");
+			setChartLabel("Average Methane Emissions");
 			setTitleTextX("Year");
 			setTitleTextY("Part per million (ppm)");
 
 			if (data) {
-				// Update chart data with the fetched carbon dioxide values
+				// Update chart data with the fetched methane emissions values
 				setChartData({
 					labels: data.years,
 					datasets: [
@@ -47,11 +47,11 @@ export const CarbonEmissions = () => {
 					],
 				});
 			} else {
-				console.log("🚀 ~ getCarbonData ~ error fetching carbon data");
+				console.log("🚀 ~ getMethaneData ~ error fetching methane data");
 			}
 		};
 
-		getCarbonData();
+		getMethaneData();
 	}, [setChartData, setChartLabel, chartLabel, setTitleTextX, setTitleTextY]);
 
 	return (

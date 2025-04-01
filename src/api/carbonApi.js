@@ -7,7 +7,7 @@ export const fetchCarbonData = async () => {
 		const response = await axios.get(CO2_API_URL);
 		const data = response.data.co2;
 
-		// Object to store temperature data grouped by 5-year intervals (decades)
+		// Object to store carbon emissions data grouped by year
 		const yearsData = {};
 
 		// Iterate through the fetched data
@@ -25,9 +25,9 @@ export const fetchCarbonData = async () => {
 			}
 		});
 
-		// Extract the sorted list of years (decades)
+		// Extract the sorted list of years
 		const years = Object.keys(yearsData).map((year) => parseInt(year));
-		// Calculate the average temperature for each 5-year interval
+		// Calculate the average carbon dioxide emissions for each year
 		const trends = years.map(
 			(year) => yearsData[year].sum / yearsData[year].count
 		);

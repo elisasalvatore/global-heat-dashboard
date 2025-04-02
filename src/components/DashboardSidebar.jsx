@@ -20,7 +20,7 @@ export function DashboardSidebar() {
 				<Typography
 					variant="h2"
 					color="blue-gray"
-					className="text-2xl 2xl:text-3xl"
+					className="text-xl 2xl:text-2xl uppercase text-blueCustom-base"
 				>
 					Global Heat
 				</Typography>

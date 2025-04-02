@@ -4,6 +4,7 @@ import { fetchNitrousData } from "../api/nitrousApi";
 //store
 import APIContext from "../store/DataContext";
 //components
+import { DataHorizontalBarChart } from "../components/DataHorizontalBarChart";
 import { DataLineChart } from "../components/DataLineChart";
 import { MobileHomeBtn } from "../components/MobileHomeBtn";
 
@@ -47,7 +48,7 @@ export const NitrousEmissions = () => {
 					],
 				});
 			} else {
-				console.log("🚀 ~ getNitrousData ~ error fetching carbon data");
+				console.log("🚀 ~ getNitrousData ~ error fetching nitrous data");
 			}
 		};
 
@@ -59,10 +60,18 @@ export const NitrousEmissions = () => {
 			{/* Render the line chart with updated data */}
 			<DataLineChart
 				data={chartData}
+				chartTitle="Globe Nitrous Oxide Emissions"
 				titleTextX={titleTextX}
 				titleTextY={titleTextY}
 			/>
 
+			{/* For mobile screens */}
+			<DataHorizontalBarChart
+				data={chartData}
+				chartTitle="Globe Nitrous Oxide Emissions"
+				titleTextX={titleTextX}
+				titleTextY={titleTextY}
+			/>
 			{/* Render a mobile home button */}
 			<MobileHomeBtn />
 		</div>

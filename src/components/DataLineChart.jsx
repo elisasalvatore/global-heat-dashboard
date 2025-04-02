@@ -21,9 +21,9 @@ ChartJS.register(
 	Legend
 );
 
-export const DataLineChart = ({ data, titleTextX, titleTextY }) => {
+export const DataLineChart = ({ data, chartTitle, titleTextX, titleTextY }) => {
 	return (
-		<div className="flex items-center justify-center m-auto w-[100%] 2xl:w-[80%] h-[90%] p-2 md:p-8 ">
+		<div className="hidden md:flex items-center justify-center m-auto w-[100%] 2xl:w-[80%] h-[90%] p-2 md:p-8">
 			<div className="flex items-center justify-center m-auto w-full h-[400px] md:h-[90%] lg:h-full">
 				<Line
 					data={data}
@@ -41,8 +41,11 @@ export const DataLineChart = ({ data, titleTextX, titleTextY }) => {
 								},
 							},
 							title: {
-								display: false,
-								// text: "Temperature Changes Over Time",
+								display: true,
+								text: chartTitle,
+								font: {
+									size: 20,
+								},
 							},
 						},
 						scales: {

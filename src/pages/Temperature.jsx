@@ -4,6 +4,7 @@ import { fetchTemperatureData } from "../api/temperatureApi";
 //store
 import APIContext from "../store/DataContext";
 //components
+import { DataHorizontalBarChart } from "../components/DataHorizontalBarChart";
 import { DataLineChart } from "../components/DataLineChart";
 import { MobileHomeBtn } from "../components/MobileHomeBtn";
 
@@ -60,12 +61,21 @@ export const Temperature = () => {
 	return (
 		<div className="w-full h-full flex items-start justify-center">
 			{/* Render the line chart with updated data */}
+			{/* For laptop and tablet screens */}
 			<DataLineChart
 				data={chartData}
+				chartTitle="Globe Temperature Change"
 				titleTextX={titleTextX}
 				titleTextY={titleTextY}
 			/>
 
+			{/* For mobile screens */}
+			<DataHorizontalBarChart
+				data={chartData}
+				chartTitle="Globe Temperature Change"
+				titleTextX={titleTextX}
+				titleTextY={titleTextY}
+			/>
 			{/* Render a mobile home button */}
 			<MobileHomeBtn />
 		</div>

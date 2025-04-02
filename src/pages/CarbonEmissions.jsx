@@ -4,6 +4,7 @@ import { fetchCarbonData } from "../api/carbonApi";
 //store
 import APIContext from "../store/DataContext";
 //components
+import { DataHorizontalBarChart } from "../components/DataHorizontalBarChart";
 import { DataLineChart } from "../components/DataLineChart";
 import { MobileHomeBtn } from "../components/MobileHomeBtn";
 
@@ -59,10 +60,18 @@ export const CarbonEmissions = () => {
 			{/* Render the line chart with updated data */}
 			<DataLineChart
 				data={chartData}
+				chartTitle="Globe Carbon Dioxide Emissions"
 				titleTextX={titleTextX}
 				titleTextY={titleTextY}
 			/>
 
+			{/* For mobile screens */}
+			<DataHorizontalBarChart
+				data={chartData}
+				chartTitle="Globe Carbon Dioxide Emissions"
+				titleTextX={titleTextX}
+				titleTextY={titleTextY}
+			/>
 			{/* Render a mobile home button */}
 			<MobileHomeBtn />
 		</div>

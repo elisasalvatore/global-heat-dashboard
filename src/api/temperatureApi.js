@@ -1,10 +1,11 @@
 import axios from "axios";
-const TEMPERATURE_API_URL = import.meta.env.VITE_APP_API_TEMPERATURE;
 
 export const fetchTemperatureData = async () => {
 	try {
 		// Make an API request to fetch temperature data
-		const response = await axios.get(TEMPERATURE_API_URL);
+		const response = await axios.get(
+			"https://global-warming.org/api/temperature-api"
+		);
 		const data = response.data.result;
 
 		// Object to store temperature data grouped by 5-year intervals

@@ -1,5 +1,4 @@
 import axios from "axios";
-const POLAR_ICE_API_URL = import.meta.env.VITE_APP_API_POLAR_ICE;
 
 export const fetchPolarIceData = async () => {
 	try {

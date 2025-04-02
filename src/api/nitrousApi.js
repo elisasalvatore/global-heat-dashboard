@@ -1,10 +1,11 @@
 import axios from "axios";
-const NO2_API_URL = import.meta.env.VITE_APP_API_NITROUS;
 
 export const fetchNitrousData = async () => {
 	try {
 		// Make an API request to fetch nitrous oxide data
-		const response = await axios.get(NO2_API_URL);
+		const response = await axios.get(
+			"https://global-warming.org/api/nitrous-oxide-api"
+		);
 		const data = response.data.nitrous;
 
 		// Object to store nitrous oxide emissions data grouped by year

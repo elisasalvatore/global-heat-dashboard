@@ -1,10 +1,9 @@
 import axios from "axios";
-const CO2_API_URL = import.meta.env.VITE_APP_API_CO2;
 
 export const fetchCarbonData = async () => {
 	try {
 		// Make an API request to fetch carbon dioxide data
-		const response = await axios.get(CO2_API_URL);
+		const response = await axios.get("https://global-warming.org/api/co2-api");
 		const data = response.data.co2;
 
 		// Object to store carbon emissions data grouped by year

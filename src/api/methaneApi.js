@@ -1,10 +1,11 @@
 import axios from "axios";
-const METHANE_API_URL = import.meta.env.VITE_APP_API_METHANE;
 
 export const fetchMethaneData = async () => {
 	try {
 		// Make an API request to fetch methane data
-		const response = await axios.get(METHANE_API_URL);
+		const response = await axios.get(
+			"https://global-warming.org/api/methane-api"
+		);
 		const data = response.data.methane;
 
 		// Object to store methane data grouped by 5-year intervals

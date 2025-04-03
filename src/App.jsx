@@ -4,7 +4,6 @@ import { DataContextProvider } from "./store/DataContext";
 //components
 import { DashboardSidebar } from "./components/DashboardSidebar";
 import { MobileSidebar } from "./components/MobileSidebar";
-import { SEOMetaTags } from "./components/seo/SEOMetaTags";
 //pages
 import { CarbonEmissions } from "./pages/CarbonEmissions";
 import { Homepage } from "./pages/Homepage";
@@ -18,8 +17,6 @@ function App() {
 		<DataContextProvider>
 			<div className="w-[100vw] h-[100vh] bg-blueCustom-dark flex justify-center items-center">
 				<div className="w-[90%] h-[90%] bg-lightBackground lg:bg-[#f2f6fc] rounded-3xl flex">
-					{/* Head - SEO Meta Tags */}
-					<SEOMetaTags />
 					{/* Sidebar */}
 					<MobileSidebar />
 					<DashboardSidebar />
